@@ -14,5 +14,8 @@ export default defineConfig({
         additionalData: `@import "src/styles/variables.scss";`
       }
     }
-  }
+  },
+  build: {
+    outDir: 'dist', // Ensure this matches your Vercel configuration
+  },
 })
