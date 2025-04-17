@@ -18,5 +18,8 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist', // Ensure this matches your Vercel configuration
+    rollupOptions: {
+      input: './index.html', // Explicitly specify the entry point
+    },
   },
 })
