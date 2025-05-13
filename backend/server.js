@@ -81,7 +81,13 @@ app.post('/create-pdf', (req, res) => {
 
 //SEND PDF INVOICE
 app.get('/fetch-pdf', (req, res) => {
-     res.sendFile(`${__dirname1}/invoice.pdf`)
+    const filePath = path.join(__dirname1, 'invoice.pdf');
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            console.error("Error sending PDF:", err); // Debug log
+            res.status(500).send("Failed to fetch PDF");
+        }
+    });
 })
 
 // --------------------------deployment------------------------------
