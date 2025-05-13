@@ -35,8 +35,8 @@ const __dirname1 = path.resolve();
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: `${process.env.user}`,
-        pass: `${process.env.pass}`
+        user: `${process.env.USER}`,
+        pass: `${process.env.PASS}`
     }
 });
 
@@ -53,7 +53,7 @@ app.post('/send-pdf', (req, res) => {
         transporter.sendMail({
             from: `Invoice Maker`, // sender address
             to: `${email}`, // list of receivers
-            replyTo: `${process.env.user}`,
+            replyTo: `${process.env.USER}`,
             subject: `Invoice`, // Subject line
             text: `Invoice`, // plain text body
             html: emailTemplate(req.body), // html body
