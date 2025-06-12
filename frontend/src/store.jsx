@@ -24,7 +24,7 @@ const preloadedState = {
 
 const store = configureStore ({
     reducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
     preloadedState,
     devTools: process.env.NODE_ENV !== 'production',
 });
